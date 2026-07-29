@@ -9,7 +9,7 @@ import DeleteConfrimModal from "../../Common/DeleteConfrimModal";
 import { toast } from "react-toastify";
 
 const BlogCard = ({ post, onDelete, onEdit, onView }) => {
-  const { title, image, excerpt, updatedAt, category } = post;
+  const { title, image, excerpt, updatedAt } = post;
 
   return (
     <Card className="h-100 shadow-sm border-0">
@@ -26,13 +26,6 @@ const BlogCard = ({ post, onDelete, onEdit, onView }) => {
               style={{ height: 180, objectFit: "cover", width: "100%" }}
             />
 
-            {/* Category Watermark */}
-            <span
-              className="badge bg-primary position-absolute"
-              style={{ top: 10, right: 10, padding: "8px 12px" }}
-            >
-              {category}
-            </span>
           </div>
 
           {/* Title */}
@@ -93,7 +86,6 @@ const Blogs = () => {
   const [blogData, setBlogData] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
   const [page, setPage] = useState(1);
-  const [categoryFilter, setCategoryFilter] = useState("all");
 
   const [deleteModal, setDeleteModal] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -101,15 +93,9 @@ const Blogs = () => {
 
   const navigate = useNavigate();
 
-  const categories = ["all", "service", "license", "visa","freezone"];
-
   // Fetch Blogs
   const fetchBlogs = async () => {
     let url = `/?page=${page}&limit=8`;
-
-    if (categoryFilter !== "all") {
-      url += `&category=${encodeURIComponent(categoryFilter)}`;
-    }
 
     const response = await getBlogs(url);
 
@@ -121,7 +107,7 @@ const Blogs = () => {
 
   useEffect(() => {
     fetchBlogs();
-  }, [page, categoryFilter]);
+  }, [page]);
 
   // Handle delete
   const handleDeleteClick = (post) => {
@@ -157,29 +143,6 @@ const Blogs = () => {
       </div>
 
       <PageMetaData title="Blog" />
-
-      {/* CATEGORY FILTER – BEAUTIFUL BADGE SELECTOR */}
-      <div className="mb-4">
-        <label className="form-label fw-bold fs-6">Filter by Category</label>
-        <div className="d-flex gap-2 flex-wrap mt-2">
-
-          {categories.map((cat) => (
-            <span
-              key={cat}
-              className={`badge rounded-pill px-3 py-2 cursor-pointer ${cat === categoryFilter ? "bg-primary text-white" : "bg-light text-dark border"
-                }`}
-              style={{ fontSize: "14px", cursor: "pointer" }}
-              onClick={() => {
-                setCategoryFilter(cat);
-                setPage(1);
-              }}
-            >
-              {cat === "all" ? "All" : cat.charAt(0).toUpperCase() + cat.slice(1)}
-            </span>
-          ))}
-
-        </div>
-      </div>
 
       {/* BLOG LIST */}
       <Row className="row-cols-1 row-cols-md-2 row-cols-xl-4 gx-3">

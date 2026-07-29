@@ -300,21 +300,9 @@ export const getCommonPackageById = async (id) => {
   }
 }
 
-export const createCommonPackage = async ({ title, description, amount, points = [], is_home = false, is_freezone = false, imageFile = null }) => {
+export const createCommonPackage = async (data) => {
   try {
-    const fd = new FormData()
-    fd.append('title', title)
-    fd.append('description', description)
-    fd.append('amount', amount)
-    // append points as points[] (backend expects points[] from UI)
-    points.forEach((p) => fd.append('points[]', p))
-    // booleans — backend accepts 'true'/'1' etc.
-    if (is_home) fd.append('is_home', '1')
-    if (is_freezone) fd.append('is_freezone', '1')
-    if (imageFile) fd.append('image', imageFile) // NOTE: route uses uploadPackageImage.single('image')
-    const res = await axiosInstance.post('/packages/common', fd, {
-      headers: { 'Content-Type': 'multipart/form-data' },
-    })
+    const res = await axiosInstance.post('/packages/common', data)
     return res.data
   } catch (error) {
     if (error?.response?.data) throw error.response.data
@@ -322,20 +310,9 @@ export const createCommonPackage = async ({ title, description, amount, points =
   }
 }
 
-export const updateCommonPackage = async (id, { title, description, amount, points = null, is_home, is_freezone, imageFile = null }) => {
+export const updateCommonPackage = async (id, data) => {
   try {
-    const fd = new FormData()
-    if (title !== undefined) fd.append('title', title)
-    if (description !== undefined) fd.append('description', description)
-    if (amount !== undefined) fd.append('amount', amount)
-    // If points is provided, send points[]; if null, skip
-    if (Array.isArray(points)) points.forEach((p) => fd.append('points[]', p))
-    if (is_home !== undefined) fd.append('is_home', is_home ? '1' : '0')
-    if (is_freezone !== undefined) fd.append('is_freezone', is_freezone ? '1' : '0')
-    if (imageFile) fd.append('image', imageFile)
-    const res = await axiosInstance.put(`/packages/common/${id}`, fd, {
-      headers: { 'Content-Type': 'multipart/form-data' },
-    })
+    const res = await axiosInstance.put(`/packages/common/${id}`, data)
     return res.data
   } catch (error) {
     if (error?.response?.data) throw error.response.data

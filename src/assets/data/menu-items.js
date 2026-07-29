@@ -1,28 +1,28 @@
 export const MENU_ITEMS = [
-  {
-    key: 'general',
-    label: 'INSIGHTS',
-    isTitle: true,
-  },
+  // {
+  //   key: 'general',
+  //   label: 'INSIGHTS',
+  //   isTitle: true,
+  // },
   // {
   //   key: 'dashboards',
   //   icon: 'iconamoon:home-duotone',
   //   label: 'Dashboards',
   //   children: [
-  {
-    key: 'dashboard',
-    icon: 'iconamoon:apps-bold',
-    label: 'Dashboard',
-    url: '/',
-    // parentKey: 'dashboards',
-  },
-  {
-    key: 'dashboard-analytics',
-    icon: 'carbon:analytics',
-    label: 'Analytics',
-    url: '/analytics',
-    // parentKey: 'dashboards',
-  },
+  // {
+  //   key: 'dashboard',
+  //   icon: 'iconamoon:apps-bold',
+  //   label: 'Dashboard',
+  //   url: '/',
+  //   // parentKey: 'dashboards',
+  // },
+  // {
+  //   key: 'dashboard-analytics',
+  //   icon: 'carbon:analytics',
+  //   label: 'Analytics',
+  //   url: '/analytics',
+  //   // parentKey: 'dashboards',
+  // },
   //     {
   //       key: 'dashboard-finance',
   //       label: 'Finance',
@@ -61,15 +61,15 @@ export const MENU_ITEMS = [
   //   icon: 'mdi:message-text-outline',
   //   label: 'Enquiry',
   //   children: [
-  {
-    key: 'enquiry',
-    icon: 'mdi:message-text-outline',
-    label: 'Enquiry',
-    url: '/enquiry',
-    // parentKey: 'enquiry'
-    // },
-    // ]
-  },
+  // {
+  //   key: 'enquiry',
+  //   icon: 'mdi:message-text-outline',
+  //   label: 'Enquiry',
+  //   url: '/enquiry',
+  //   // parentKey: 'enquiry'
+  //   // },
+  //   // ]
+  // },
 
   {
     key: 'apps',
@@ -81,15 +81,15 @@ export const MENU_ITEMS = [
   //   icon: 'mdi:message-text-outline',
   //   label: 'Blogs',
   //   children: [
-  {
-    key: 'herosection',
-    icon: 'mdi:home-outline',
-    label: 'Herosection',
-    url: '/herosection',
-    //     parentKey: 'blogs'
-    //   }
-    // ]
-  },
+  // {
+  //   key: 'herosection',
+  //   icon: 'mdi:home-outline',
+  //   label: 'Herosection',
+  //   url: '/herosection',
+  //   //     parentKey: 'blogs'
+  //   //   }
+  //   // ]
+  // },
   {
     key: 'blogs',
     icon: 'mdi:post-outline',
@@ -105,24 +105,24 @@ export const MENU_ITEMS = [
   //   icon: 'mdi:help-circle-outline',
   //   label: 'Faqs',
   //   children: [
-  {
-    key: 'faqs',
-    icon: 'mdi:help-circle-outline',
-    label: 'Faqs',
-    url: '/faqs',
-  },
-  {
-    key: 'gallery',
-    icon: 'mdi:image',
-    label: 'Gallery',
-    url: '/gallery',
-  },
-  {
-    key: 'newsletter',
-    icon: 'mdi:email-newsletter',
-    label: 'Newsletters',
-    url: '/newsletter/subscribers',
-  },
+  // {
+  //   key: 'faqs',
+  //   icon: 'mdi:help-circle-outline',
+  //   label: 'Faqs',
+  //   url: '/faqs',
+  // },
+  // {
+  //   key: 'gallery',
+  //   icon: 'mdi:image',
+  //   label: 'Gallery',
+  //   url: '/gallery',
+  // },
+  // {
+  //   key: 'newsletter',
+  //   icon: 'mdi:email-newsletter',
+  //   label: 'Newsletters',
+  //   url: '/newsletter/subscribers',
+  // },
 
   {
     key: 'page-packages',
@@ -136,12 +136,12 @@ export const MENU_ITEMS = [
     isTitle: true,
   },
 
-  {
-    key: 'seo',
-    icon: 'mdi:magnify-scan',
-    label: 'Seo',
-    url: '/seo',
-  },
+  // {
+  //   key: 'seo',
+  //   icon: 'mdi:magnify-scan',
+  //   label: 'Seo',
+  //   url: '/seo',
+  // },
   {
     key: 'settings',
     icon: 'mdi:settings-outline',

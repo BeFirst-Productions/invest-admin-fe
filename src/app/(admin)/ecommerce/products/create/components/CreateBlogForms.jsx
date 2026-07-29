@@ -42,8 +42,6 @@ const CreateBlogForms = () => {
     metaKeywords: '',
     metaDescription: '',
     canonical: '',
-    subCategory: '',
-    category: '',
     url: ''
   });
 
@@ -59,8 +57,6 @@ const CreateBlogForms = () => {
         metaKeywords: editingBlog.metaKeywords,
         metaDescription: editingBlog.metaDescription,
         canonical: editingBlog.canonical,
-        subCategory: editingBlog.subCategory,
-        category: editingBlog.category,
         url: editingBlog.url
       });
     }
@@ -147,10 +143,6 @@ const CreateBlogForms = () => {
         newErrors.url = errorMsg;
       }
 
-      // Subcategory limit error
-      if (errorMsg.includes("Only") && errorMsg.includes("blogs")) {
-        newErrors.subCategory = errorMsg;
-      }
 
       // Required field errors
       if (errorMsg.includes("required")) {

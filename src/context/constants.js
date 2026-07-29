@@ -5,5 +5,5 @@ export const developedBy = 'Next Media';
 export const contactUs = 'techzaastudio@gmail.com';
 export const buyLink = '';
 export const basePath = '';
-export const DEFAULT_PAGE_TITLE = 'ADL BUSINESS SOLUTIONS | Responsive Admin Dashboard';
+export const DEFAULT_PAGE_TITLE = 'INVEST FIRST | Responsive Admin Dashboard';
 export const colorVariants = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'dark', 'purple', 'pink', 'orange', 'light', 'link'];
