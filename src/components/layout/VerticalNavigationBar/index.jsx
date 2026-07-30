@@ -22,6 +22,7 @@ const VerticalNavigationBar = () => {
   return items.filter(
     (item) =>
       item.key !== "user-management" &&
+      item.key !== "general" &&
       item.key !== "herosection"
   );
 }

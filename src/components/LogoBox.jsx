@@ -19,10 +19,10 @@ const LogoBox = ({
     alt="logo sm"
   /> */}
       <img
-        src="/logo.png"
+        src="/logo-white.png"
         style={{
-          width: 100,
-          height: 100,
+          width: 200,
+          height: 200,
           objectFit: "contain",
         }}
         alt="logo dark"
@@ -42,8 +42,8 @@ const LogoBox = ({
       <img
         src="/logo.png"
         style={{
-          width: 100,
-          height: 100,
+          width: 170,
+          height: 170,
           objectFit: "contain",
         }}
         alt="logo light"

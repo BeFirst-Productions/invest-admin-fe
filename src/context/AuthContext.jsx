@@ -34,7 +34,7 @@ export const AuthProvider = ({ children }) => {
       const res = await signIn(userData);
     setAccessToken(res.accessToken);
     setUser(res.user);
-    navigate("/")
+    navigate("/packages")
 
   } catch (error) {
     return error.message
