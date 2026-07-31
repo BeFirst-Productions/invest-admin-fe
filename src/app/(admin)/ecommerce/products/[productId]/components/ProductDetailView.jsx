@@ -16,7 +16,7 @@ const ProductDetailView = ({ product }) => {
       <div className="ps-xl-3 mt-3 mt-xl-0">
 
         {/* TITLE */}
-        <h2 className="fw-bold text-dark mb-3">{title}</h2>
+        <h2 className="fw-bold mb-3">{title}</h2>
 
         {/* CATEGORY BADGES */}
         <div className="d-flex gap-2 mb-3 flex-wrap">
@@ -33,20 +33,27 @@ const ProductDetailView = ({ product }) => {
 
         {/* EXCERPT */}
         <div className="mb-4">
-          <h5 className="fw-semibold text-dark mb-2">Summary</h5>
-          <p className="text-white fs-4">{excerpt}</p>
+          <h5 className="fw-semibold mb-2">Summary</h5>
+          <p className="fs-4">{excerpt}</p>
         </div>
 
         {/* DESCRIPTION */}
         <div className="mb-4">
-  <h5 className="fw-semibold text-dark mb-2">Full Description</h5>
+          <h5 className="fw-semibold mb-2">Full Description</h5>
 
-  <div
-    className="text-white fs-4"
-    style={{ lineHeight: "1.7" }}
-    dangerouslySetInnerHTML={{ __html:description }}
-  />
-</div>
+          <style>
+            {`
+              .rich-text-container * {
+                color: inherit !important;
+              }
+            `}
+          </style>
+          <div
+            className="fs-4 rich-text-container"
+            style={{ lineHeight: "1.7" }}
+            dangerouslySetInnerHTML={{ __html:description }}
+          />
+        </div>
 
         {/* ACTION BUTTONS */}
         <div className="d-flex justify-content-center gap-2 mt-4">

@@ -29,7 +29,9 @@ const ProductDetail = () => {
           <Card>
             <CardBody>
               <Row>
-                <Col lg={4}>{product && <ProductImages product={product} />}</Col>
+                <Col lg={4} style={{ position: 'sticky', top: '90px', alignSelf: 'flex-start' }}>
+                  {product && <ProductImages product={product} />}
+                </Col>
                 <Col lg={8}>{product && <ProductDetailView product={product} />}</Col>
               </Row>
             </CardBody>
